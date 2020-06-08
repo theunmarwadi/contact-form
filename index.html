@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <form class="cform" action="contact.php">
-            <label for="">Name</label>
-            <input type="text" name="name">
-            <label for="">Email</label>
-            <input type="text" name="Email">
-            <label for="">Message</label>
-            <textarea name="Message" id="" cols="30" rows="10"></textarea>
-            <button class="submitbutton">Send Message</button>
+    <div class="container">
+        <form method="POST" action="contact.php">
+            <div><label>Your Name:</label></div>
+            <div><input type="text" name="myName" class="form-control" /></div>
+            <div><label>Your Email:</label></div>
+            <div><input type="text" name="myEmail" class="form-control" /></div>
+            
+            <div><label>Message:</label></div>
+            <div><textarea cols="40" rows="5" name="myMessage" class="form-control"></textarea></div>
+            <div class="float-right mt-2">
+                <input type="submit" value="Send" class="btn btn-primary" />
+            </div>
         </form>
+    </div>
 </body>
 </html>

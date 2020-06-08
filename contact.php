@@ -1,16 +1,16 @@
 <?php
-// variable setting 
-$name = $_REQUEST['name'];
-$email = $_REQUEST['Email'];
-$message = $_REQUEST['Message'];
+	
+	$userName 		= $_POST['myName'];
+	$userEmail	 	= $_POST['myEmail'];
+	$userMessage 		= $_POST['myMessage'];
 
-// check input fields
-if (empty($name) || empty($email) || empty($message)) {
-    echo "Please fill all the fields";
-}
-else {
-    mail("theunmarwadi@gmail.com", "Contact Message", $message, "From: $name < $email>");
-    echo "<script type = 'text/javascript'>alert('your message sent successfully');
-            window.history.log(-1);
-            </script>"; 
-}
+	$to 			= "theunmarwadi@gmail.com";
+	$subject 		= "Email from my website";
+	$body 			= "Information Submitted:";
+
+	$body .= "\r\n Name: " . $userName;
+	$body .= "\r\n Email: " . $userEmail;
+	$body .= "\r\n Message: " . $userMessage;
+
+	mail($to, $subject, $body);
+?>
